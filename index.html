@@ -86,15 +86,26 @@
     }
     .sb-name{font-size:13px;font-weight:700;color:#fff}
     .sb-role{font-size:9.5px;color:var(--muted);letter-spacing:.4px;margin-top:2px}
-    .sb-plinks{display:flex;flex-direction:column;gap:5px;margin-top:11px}
-    .sb-pl{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);text-decoration:none;padding:6px 7px;border-radius:7px;border:1px solid transparent;transition:all .15s}
+
+    /* profile links now also in 2-col grid */
+    .sb-plinks{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:11px}
+    .sb-pl{
+      display:flex;align-items:center;gap:7px;
+      font-size:10.5px;font-weight:700;
+      color:var(--muted);text-decoration:none;
+      padding:7px 7px;border-radius:8px;
+      border:1px solid var(--bdr);background:var(--card);
+      transition:all .15s;min-width:0;
+    }
     .sb-pl:hover{color:var(--gold);border-color:var(--gb);background:var(--gd)}
+    .sb-pl span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .sb-pi{width:20px;height:20px;border-radius:5px;background:var(--gd);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0}
 
     .sb-sec{padding:13px 14px;border-bottom:1px solid rgba(255,255,255,0.05)}
     .sb-stitle{font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:9px;font-weight:700}
 
-    .sb-stats{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+    /* uniform 2-col grid used by EVERY section */
+    .sb-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
     .sb-st{background:var(--card);border-radius:8px;border:1px solid var(--bdr);padding:7px 5px;text-align:center}
     .sb-sn{font-size:17px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .sb-sl{font-size:7.5px;color:var(--dim);letter-spacing:.5px;text-transform:uppercase;margin-top:1px}
@@ -103,11 +114,17 @@
     .sb-adlbl{font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
     .sb-adsl{font-size:9px;color:rgba(250,204,21,0.25);margin-top:3px}
 
-    .sb-notes{font-size:10.5px;color:var(--muted);line-height:1.75;background:var(--card);border-radius:8px;border:1px solid var(--bdr);padding:9px}
-
-    .sb-qlinks{display:flex;flex-direction:column;gap:4px}
-    .sb-ql{font-size:10.5px;color:var(--muted);text-decoration:none;padding:6px 7px;border-radius:7px;border:1px solid transparent;display:flex;align-items:center;gap:6px;transition:all .15s}
+    /* quick-access / AI-chat links now boxed in 2-col grid */
+    .sb-ql{
+      font-size:10.5px;font-weight:700;
+      color:var(--muted);text-decoration:none;
+      padding:7px 7px;border-radius:8px;
+      border:1px solid var(--bdr);background:var(--card);
+      display:flex;align-items:center;gap:6px;
+      transition:all .15s;min-width:0;
+    }
     .sb-ql:hover{color:var(--green);border-color:var(--gnb);background:var(--gn)}
+    .sb-ql span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .sb-qd{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
 
     /* ── MAIN ── */
@@ -338,16 +355,16 @@
     <div class="sb-name">RK Behera</div>
     <div class="sb-role">AI Tester &middot; Domain Investor</div>
     <div class="sb-plinks">
-      <a class="sb-pl" href="https://linkedin.com/in/rkbehera2024" target="_blank" rel="noopener"><div class="sb-pi">LI</div>LinkedIn</a>
-      <a class="sb-pl" href="https://www.facebook.com/" target="_blank" rel="noopener"><div class="sb-pi">FB</div>Facebook</a>
-      <a class="sb-pl" href="https://x.com/home" target="_blank" rel="noopener"><div class="sb-pi">X</div>X (Twitter)</a>
-      <a class="sb-pl" href="https://www.tumblr.com/dashboard/stuff_for_you" target="_blank" rel="noopener"><div class="sb-pi">TB</div>Tumblr</a>
-      <a class="sb-pl" href="https://in.pinterest.com/" target="_blank" rel="noopener"><div class="sb-pi">PT</div>Pinterest</a>
+      <a class="sb-pl" href="https://linkedin.com/in/rkbehera2024" target="_blank" rel="noopener"><div class="sb-pi">LI</div><span>LinkedIn</span></a>
+      <a class="sb-pl" href="https://www.facebook.com/" target="_blank" rel="noopener"><div class="sb-pi">FB</div><span>Facebook</span></a>
+      <a class="sb-pl" href="https://x.com/home" target="_blank" rel="noopener"><div class="sb-pi">X</div><span>X (Twitter)</span></a>
+      <a class="sb-pl" href="https://www.tumblr.com/dashboard/stuff_for_you" target="_blank" rel="noopener"><div class="sb-pi">TB</div><span>Tumblr</span></a>
+      <a class="sb-pl" href="https://in.pinterest.com/" target="_blank" rel="noopener"><div class="sb-pi">PT</div><span>Pinterest</span></a>
     </div>
   </div>
   <div class="sb-sec">
     <div class="sb-stitle">Portfolio Stats</div>
-    <div class="sb-stats">
+    <div class="sb-grid">
       <div class="sb-st"><div class="sb-sn" id="sbDom">13</div><div class="sb-sl">Domains</div></div>
       <div class="sb-st"><div class="sb-sn">7</div><div class="sb-sl">Blogs</div></div>
       <div class="sb-st"><div class="sb-sn" id="sbTot">55</div><div class="sb-sl">Bookmarks</div></div>
@@ -356,26 +373,26 @@
   </div>
   <div class="sb-sec">
     <div class="sb-stitle">AI Chat</div>
-    <div class="sb-qlinks">
-      <a class="sb-ql" href="https://claude.ai/new" target="_blank" rel="noopener"><div class="sb-qd"></div>Claude</a>
-      <a class="sb-ql" href="https://chatgpt.com/" target="_blank" rel="noopener"><div class="sb-qd"></div>ChatGPT</a>
-      <a class="sb-ql" href="https://chat.deepseek.com/" target="_blank" rel="noopener"><div class="sb-qd"></div>DeepSeek</a>
-      <a class="sb-ql" href="https://grok.com/" target="_blank" rel="noopener"><div class="sb-qd"></div>Grok</a>
-      <a class="sb-ql" href="https://copilot.com/chat?es=UnauthClick&msafed=0&redirfrom=cosmicRingCookie&fromcode=cmmlf487uwy" target="_blank" rel="noopener"><div class="sb-qd"></div>Copilot</a>
-      <a class="sb-ql" href="https://www.kimi.ai/" target="_blank" rel="noopener"><div class="sb-qd"></div>Kimi AI</a>
-      <a class="sb-ql" href="https://www.meta.ai/" target="_blank" rel="noopener"><div class="sb-qd"></div>Meta AI</a>
+    <div class="sb-grid">
+      <a class="sb-ql" href="https://claude.ai/new" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Claude</span></a>
+      <a class="sb-ql" href="https://chatgpt.com/" target="_blank" rel="noopener"><div class="sb-qd"></div><span>ChatGPT</span></a>
+      <a class="sb-ql" href="https://chat.deepseek.com/" target="_blank" rel="noopener"><div class="sb-qd"></div><span>DeepSeek</span></a>
+      <a class="sb-ql" href="https://grok.com/" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Grok</span></a>
+      <a class="sb-ql" href="https://copilot.com/chat?es=UnauthClick&msafed=0&redirfrom=cosmicRingCookie&fromcode=cmmlf487uwy" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Copilot</span></a>
+      <a class="sb-ql" href="https://www.kimi.ai/" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Kimi AI</span></a>
+      <a class="sb-ql" href="https://www.meta.ai/" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Meta AI</span></a>
     </div>
   </div>
   <div class="sb-sec">
     <div class="sb-stitle">Quick Access</div>
-    <div class="sb-qlinks">
-      <a class="sb-ql" href="https://github.com" target="_blank" rel="noopener"><div class="sb-qd"></div>GitHub</a>
-      <a class="sb-ql" href="https://blogger.com" target="_blank" rel="noopener"><div class="sb-qd"></div>Blogger Dashboard</a>
-      <a class="sb-ql" href="https://www.bing.com/webmasters" target="_blank" rel="noopener"><div class="sb-qd"></div>Bing Webmasters Tool</a>     
-      <a class="sb-ql" href="https://analytics.google.com" target="_blank" rel="noopener"><div class="sb-qd"></div>Google Analytics</a>
-      <a class="sb-ql" href="https://search.google.com/search-console" target="_blank" rel="noopener"><div class="sb-qd"></div>Search Console</a>
-      <a class="sb-ql" href="https://console.anthropic.com" target="_blank" rel="noopener"><div class="sb-qd"></div>Anthropic Console</a>
-      <a class="sb-ql" href="https://afternic.com" target="_blank" rel="noopener"><div class="sb-qd"></div>Afternic Listings</a>
+    <div class="sb-grid">
+      <a class="sb-ql" href="https://github.com" target="_blank" rel="noopener"><div class="sb-qd"></div><span>GitHub</span></a>
+      <a class="sb-ql" href="https://blogger.com" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Blogger</span></a>
+      <a class="sb-ql" href="https://www.bing.com/webmasters" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Bing Webmasters</span></a>
+      <a class="sb-ql" href="https://analytics.google.com" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Google Analytics</span></a>
+      <a class="sb-ql" href="https://search.google.com/search-console" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Search Console</span></a>
+      <a class="sb-ql" href="https://console.anthropic.com" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Anthropic</span></a>
+      <a class="sb-ql" href="https://afternic.com" target="_blank" rel="noopener"><div class="sb-qd"></div><span>Afternic</span></a>
     </div>
   </div>
   <div class="sb-sec">
@@ -503,7 +520,8 @@ var D=[
     {n:'SuperAnnotate.com',u:'https://app.superannotate.com',i:'SA',b:'Freelanceer'},
     {n:'Discord.com',u:'https://discord.com/channels/1204783863528947732/1546411450405228614',i:'D',b:'Social'},
     {n:'Deel.com' ,u:'https://app.deel.com/',i:'D',b:'Payment Processor'},
-    {n:'Google Adsense',u:'https://adsense.google.com/adsense/u/0/pub-3049422094424798/home',i:'Adsense',b:'Parent'},    
+    {n:'Google Adsense',u:'https://adsense.google.com/adsense/u/0/pub-3049422094424798/home',i:'Adsense',b:'Parent'},
+    {n:'Github Homepage' ,u:'https://github.com/beherark1964-hue/rkbookmarks',i:'D',b:'Github.com'},
     {n:'InternetAITools.com',u:'https://internetaitools.com',i:'AI',b:'Tools'},
     {n:'HindiNewsFeeds.in',u:'https://hindinewsfeeds.in',i:'OD',b:'Hindi News'},
     {n:'OdiaNewsFeeds.in',u:'https://odianewsfeeds.in',i:'OD',b:'Odia News'},
@@ -524,7 +542,8 @@ var D=[
     {n:'RupeeAI.in',u:'https://rupeeai.in',i:'Rs',b:'Domain'},
     
   ]},
-  {id:'blogs',lb:'My Blogs',ic:'BLG',si:1,cards:[    
+  {id:'blogs',lb:'My Blogs',ic:'BLG',si:1,cards:[
+    {n:'Color Codes',u:'https://www.internetaitools.com/p/color-code-converter.html',i:'Tools',b:'Everyday Tools'},
     {n:'AIDomainNews',u:'https://aidomainnews.blogspot.com',i:'AI',b:'AI Blog'},
     {n:'Trending Breaking News India',u:'https://trendingbreakingnewsindia.blogspot.com',i:'IN',b:'News Blog'},   
     {n:'EuroNewsFeeds',u:'https://euronewsfeeds.blogspot.com',i:'EU',b:'EU News'},
